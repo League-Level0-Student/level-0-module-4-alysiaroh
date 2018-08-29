@@ -10,7 +10,7 @@ public class SleepyHead {
 
     public static void main(String[] args) {
         
-        boolean isWeekday, isVacation;
+        boolean isWeekday=false, isVacation=false;
         
         /* You MUST use the above boolean variables in your code */
         
@@ -18,23 +18,38 @@ public class SleepyHead {
          * Ask the user for these values using a confirm dialog like the one below
               JOptionPane.showConfirmDialog(null, "Is it a weekday?", "Sleepy Head", JOptionPane.YES_NO_OPTION);
          */
-        JOptionPane.showConfirmDialog(null, "Is it a weekday?", "Sleepy Head",JOptionPane.YES_NO_OPTION);
-        if(isWeekday= true) {
-        	JOptionPane.showConfirmDialog(null, "Are you on vacation?", "Sleepy Head", JOptionPane.YES_NO_OPTION);
-        	if(isVacation = true) {
-        		System.out.println("sleep in?");
-        	}
-
-        	
-        	
-        if(isWeekday= false) {
-        	System.out.println("sleep in");
+        int a = JOptionPane.showConfirmDialog(null, "Is it a weekday?", "Sleepy Head",JOptionPane.YES_NO_OPTION);
+        int b = JOptionPane.showConfirmDialog(null, "Is it vacation?","Sleepy Head",JOptionPane.YES_NO_OPTION);
+        System.out.println(b);
+        if(a==0) {
+        	isWeekday=true;
         }
-        
+        if(a==1) {
+        	isWeekday=false;
+        }
+        if(b==1) {
+        	isVacation=false;
+        }
+        if(b==0)  {
+        	isVacation=true;
+        }
+ 
         /*
          * Print “sleep in�? if it is a vacation or a weekend. If it’s a weekday,
          * print “get up lazybones!�? If it is a weekday, and we are on vacation,
          * print “sleep in�?.
          */
+        if(isWeekday) {
+        	if(isVacation) {
+        		System.out.println("sleep in?");
+        	}
+        	else {
+        		System.out.println("get up lazybones!");
+        	}
+        	
+        }
+        else {
+        	System.out.println("sleep in?");
+        }
     }
-}}
+}
